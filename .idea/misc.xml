@@ -19,6 +19,8 @@
         <option value="$PROJECT_DIR$/Exercise_1/Experiment_7/EventProducer/pom.xml" />
         <option value="$PROJECT_DIR$/Exercise_1/Experiment_7/EventConsumer1/pom.xml" />
         <option value="$PROJECT_DIR$/Exercise_1/Experiment_7/EventConsumer2/pom.xml" />
+        <option value="$PROJECT_DIR$/Exercise_1/Experiment_5/consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/Exercise_1/Experiment_5/producer/pom.xml" />
       </list>
     </option>
   </component>

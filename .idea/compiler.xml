@@ -15,6 +15,8 @@
         <module name="consumer-lag-consumer" />
         <module name="event-consumer-1" />
         <module name="latency-event-producer" />
+        <module name="pubsub-producer (3)" />
+        <module name="pubsub-consumer (3)" />
         <module name="pubsub-producer" />
         <module name="pubsub-consumer (2)" />
         <module name="pubsub-producer (2)" />
