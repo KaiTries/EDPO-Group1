@@ -7,7 +7,7 @@ import org.apache.kafka.common.serialization.Deserializer;
 import java.util.Map;
 
 // Note: deserialized objects are stored by default as LinkedHashMap by ObjectMapper jackson
-
+// test
 public class JavaDeserializer implements Deserializer<Object> {
 
     private ObjectMapper objectMapper = new ObjectMapper();
