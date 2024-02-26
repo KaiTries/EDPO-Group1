@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/Exercise_1/base_code/consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/Exercise_1/base_code/ClickStream-Producer/pom.xml" />
+        <option value="$PROJECT_DIR$/Exercise_1/base_code/EyeTrackers-Producer/pom.xml" />
+        <option value="$PROJECT_DIR$/Exercise_1/Experiment_1/consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/Exercise_1/Experiment_1/LatencyEventProducer/pom.xml" />
+        <option value="$PROJECT_DIR$/Exercise_1/Experiment_2/consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/Exercise_1/Experiment_2/producer/pom.xml" />
+        <option value="$PROJECT_DIR$/Exercise_1/Experiment_3/producer/pom.xml" />
+        <option value="$PROJECT_DIR$/Exercise_1/Experiment_3/gazeEventConsumer/pom.xml" />
+        <option value="$PROJECT_DIR$/Exercise_1/Experiment_3/clickEventConsumer/pom.xml" />
+        <option value="$PROJECT_DIR$/Exercise_1/Experiment_4/consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/Exercise_1/Experiment_4/ConsumerLagProducer/pom.xml" />
+        <option value="$PROJECT_DIR$/Exercise_1/Experiment_7/EventProducer/pom.xml" />
+        <option value="$PROJECT_DIR$/Exercise_1/Experiment_7/EventConsumer1/pom.xml" />
+        <option value="$PROJECT_DIR$/Exercise_1/Experiment_7/EventConsumer2/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="openjdk-21" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
