@@ -6,23 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="consumer-lag-producer" />
         <module name="pubsub-consumer" />
-        <module name="pubsub-consumer (1)" />
-        <module name="experiment3-producer" />
-        <module name="experiment3-gazeEventConsumer" />
-        <module name="event-consumer-2" />
-        <module name="consumer-lag-consumer" />
-        <module name="event-consumer-1" />
-        <module name="latency-event-producer" />
-        <module name="pubsub-producer (3)" />
-        <module name="pubsub-consumer (3)" />
         <module name="pubsub-producer" />
-        <module name="pubsub-consumer (2)" />
-        <module name="pubsub-producer (2)" />
-        <module name="pubsub-producer (1)" />
-        <module name="event-producer" />
-        <module name="experiment3-clickEventConsumer" />
       </profile>
     </annotationProcessing>
   </component>
