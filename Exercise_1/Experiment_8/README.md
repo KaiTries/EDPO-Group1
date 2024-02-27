@@ -1,16 +1,15 @@
-# Experiment 2:  the risk of data loss due to offset misconfigurations
+# Experiment 8:  Behaviour of Kafka with multiple topics and partitions
 Based on repository [lab02-kafka-producer-consumer](https://github.com/scs-edpo/lab02Part1-kafka-producer-consumer)
 
 Made Producer a bit simpler -> Sends message every second
 
 ## Goal
-* Investigate the risk of data loss due to offset misconfigurations with different consumer configurations.
+* Investigate the behaviour of Kafka with multiple topics and partitions
 
 ## Experiment Explanation
-Kafka is designed to be a reliable and robust event handler.
-If configured correctly, no data loss due to offset misconfigurations should occur.
-There are, however, possible configurations where data loss can occur.
-Following are experiments to test these scenarios.
+A realistic application using Kafka utilizes multiple topics and partitions.
+Therefore it is good to know how that behaviour actually works.
+The following Experiment illustates some relevant scenarios.
 
 The relevant consumer properties are (values are default values):
 ```properties
