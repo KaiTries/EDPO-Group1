@@ -4,12 +4,12 @@ import com.google.common.io.Resources;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
-import org.apache.kafka.common.TopicPartition;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.time.Duration;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Properties;
 
 public class Consumer {
@@ -21,18 +21,22 @@ public class Consumer {
             consumer = new KafkaConsumer<>(properties);
         }
 
-        // Assign topic partitions
-        TopicPartition partition = new TopicPartition("user-events", 0);
-        consumer.assign(Arrays.asList(partition));
+        consumer.subscribe(List.of("user-events"));
 
-        // Manually seek to the desired offset
-        consumer.seek(partition, 240);
+        int i = 0;
+
         try {
             while (true) {
                 ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
+
                 for (ConsumerRecord<String, String> record : records) {
                     System.out.printf("offset = %d, key = %s, value = %s%n", record.offset(), record.key(), record.value());
+                    i++;
+                    if (i == 50) {
+                        throw new IOException("record processing error");
+                    }
                 }
+                consumer.commitSync();
             }
         } finally {
                 consumer.close();
