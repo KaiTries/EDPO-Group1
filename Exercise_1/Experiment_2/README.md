@@ -33,7 +33,7 @@ There are three different ack settings: 0,1 and all.
     docker-compose up -d
     ```
 2. Start Producer (via IDE) with the following properties
-    ```
+    ```properties
     acks=0
     retries=0
     ```
@@ -47,7 +47,7 @@ There are three different ack settings: 0,1 and all.
    * The missing messages are the ones sent before the Producer realized it lost connection
 
 9. (Re)-start Producer (via IDE) with the following new properties
-   ```
+   ```properties
    acks=1
    retries=0
    ```
@@ -56,7 +56,7 @@ There are three different ack settings: 0,1 and all.
     * Losses occur less often -> acks=1 adds some security but not enough
     * A bit finicky to replicate / test, might have to kill docker container multiple times to achieve data loss
 11. (Re)-start Producer (via IDE) with the following new properties
-   ```
+   ```properties
    acks=1
    retries=1
    ```

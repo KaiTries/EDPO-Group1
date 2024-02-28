@@ -6,10 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="pubsub-producer" />
         <module name="pubsub-consumer" />
-        <module name="pubsub-producer (1)" />
-        <module name="pubsub-consumer (1)" />
+        <module name="pubsub-producer" />
       </profile>
     </annotationProcessing>
   </component>
