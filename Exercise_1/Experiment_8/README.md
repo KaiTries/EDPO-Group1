@@ -1,60 +1,23 @@
-# Experiment 2:  the risk of data loss due to offset misconfigurations
+# Experiment 8:  Kafka behaviour with multiple Topics and Partitions
 Based on repository [lab02-kafka-producer-consumer](https://github.com/scs-edpo/lab02Part1-kafka-producer-consumer)
 
-Made Producer a bit simpler -> Sends message every second
-
 ## Goal
-* Investigate the risk of data loss due to offset misconfigurations with different consumer configurations.
+* Investigate the behaviour of Kafka given multiple Topics and Partitions.
 
 ## Experiment Explanation
-Kafka is designed to be a reliable and robust event handler.
-If configured correctly, no data loss due to offset misconfigurations should occur.
-There are, however, possible configurations where data loss can occur.
-Following are experiments to test these scenarios.
-
-The relevant consumer properties are (values are default values):
-```properties
-auto.offset.reset=latest #What to do when there is no initial / invalid offset
-enable.auto.commit=true #Is the consumers offset automatically committed periodically
-auto.commit.inverval.ms=5000 #specifies the interval length, above must be set to true
-max.poll.records=500 #Sets the max number of records returned in a single call to poll(), affects offset since they are typically committed after batch processed
-enable.auto.offset.store=true #Enables / disables storing current offset in consumer group
-```
-
-
-Out of the box, Kafka already handles offset configuration. If you just create a consumer like this
-```java
-public class Consumer {
-    public static void main(String[] args) throws IOException {
-        KafkaConsumer<String, String> consumer;
-        try (InputStream props = Resources.getResource("consumer.properties").openStream()) {
-            Properties properties = new Properties();
-            properties.load(props);
-            consumer = new KafkaConsumer<>(properties);
-        }
-        consumer.subscribe(Arrays.asList("user-events"));
-        try {
-            while (true) {
-                ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
-                for (ConsumerRecord<String, String> record : records) {
-                    System.out.printf("offset = %d, key = %s, value = %s%n", record.offset(), record.key(), record.value());
-                }
-            }
-        } finally {
-            consumer.close();
-        }
-    }
-}
-```
-Kafka will manage the offset for you.
-Without specifying anything further, the offset configuration will be set to "latest."
-This can lead to data loss!
-We will describe the scenario below.
+Realistically an entity using Kafka will use multiple Topics and Partitions.
+Therefore, it is important to know how these properties work.
 
 
 ## Setup
 * docker/docker-compose.yml Change the property: KAFKA_ADVERTISED_HOST_NAME to your local ipv4 address (ipconfig | grep
   inet)
+* ```bash
+    kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 3 --topic topic1_p3
+    kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic topic2_p1
+    kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 5 --topic topic3_p5  
+  ```
+
 
 ## Steps
 1. Start the Kafka cluster
