@@ -8,11 +8,11 @@ import org.apache.kafka.clients.consumer.KafkaConsumer;
 import java.io.IOException;
 import java.io.InputStream;
 import java.time.Duration;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
 
-public class Consumer {
+public class Consumer2 {
+
     public static void main(String[] args) throws IOException {
         KafkaConsumer<String, String> consumer;
         try (InputStream props = Resources.getResource("consumer.properties").openStream()) {
@@ -36,8 +36,7 @@ public class Consumer {
                 }
             }
         } finally {
-                consumer.close();
-            }
+            consumer.close();
         }
-
+    }
 }

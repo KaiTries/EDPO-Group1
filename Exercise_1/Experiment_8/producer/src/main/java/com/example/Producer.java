@@ -22,9 +22,14 @@ public class Producer {
             for (int i = 0; i < 100000; i++) {
                 Thread.sleep(1000);
                 producer.send(new ProducerRecord<String, String>(
-                      "user-events", // topic
-                      "user_id_" + i, // key
+                      "topic1", // topic
                       "some_value_" + System.nanoTime())); // value
+                producer.send(new ProducerRecord<String, String>(
+                        "topic2", // topic
+                        "some_value_" + System.nanoTime())); // value
+                producer.send(new ProducerRecord<String, String>(
+                        "topic3", // topic
+                        "some_value_" + System.nanoTime())); // value
             }
         } catch (Throwable throwable) {
             System.out.println(throwable.getStackTrace());
