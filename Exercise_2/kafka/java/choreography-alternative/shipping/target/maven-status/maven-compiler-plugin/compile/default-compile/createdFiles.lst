@@ -1,9 +1,0 @@
-io\flowing\retail\shipping\application\ShippingService.class
-io\flowing\retail\shipping\messages\Message.class
-io\flowing\retail\shipping\messages\MessageSender.class
-io\flowing\retail\shipping\messages\payload\Message.class
-io\flowing\retail\shipping\ShippingApplication.class
-io\flowing\retail\shipping\messages\payload\GoodsFetchedEventPayload.class
-io\flowing\retail\shipping\messages\MessageListener.class
-io\flowing\retail\shipping\messages\MessageListener$1.class
-io\flowing\retail\shipping\messages\payload\CustomerPayload.class

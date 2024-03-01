@@ -1,9 +1,0 @@
-io\flowing\retail\monitor\messages\MessageListener.class
-io\flowing\retail\monitor\MonitorApplication.class
-io\flowing\retail\monitor\web\WebSocketConfig.class
-io\flowing\retail\monitor\web\MonitorRestController.class
-io\flowing\retail\monitor\messages\MessageListener$1.class
-io\flowing\retail\monitor\persistence\LogRepository.class
-io\flowing\retail\monitor\messages\Message.class
-io\flowing\retail\monitor\web\TomcatConfiguration.class
-io\flowing\retail\monitor\domain\PastEvent.class

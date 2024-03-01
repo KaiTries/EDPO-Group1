@@ -1,8 +1,0 @@
-io\flowing\retail\inventory\messages\Message.class
-io\flowing\retail\inventory\InventoryApplication.class
-io\flowing\retail\inventory\domain\PickOrder.class
-io\flowing\retail\inventory\messages\MessageSender.class
-io\flowing\retail\inventory\messages\MessageListener.class
-io\flowing\retail\inventory\application\InventoryService.class
-io\flowing\retail\inventory\domain\Item.class
-io\flowing\retail\inventory\messages\MessageListener$1.class

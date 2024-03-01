@@ -1,5 +1,0 @@
-io\flowing\retail\payment\application\PaymentService.class
-io\flowing\retail\payment\messages\MessageSender.class
-io\flowing\retail\payment\messages\MessageListener.class
-io\flowing\retail\payment\messages\Message.class
-io\flowing\retail\payment\PaymentApplication.class
