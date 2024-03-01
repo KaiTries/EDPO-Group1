@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/rest/java/stripe-fake/pom.xml" />
+        <option value="$PROJECT_DIR$/rest/java/payment-zeebe/pom.xml" />
+        <option value="$PROJECT_DIR$/rest/java/payment-camunda/pom.xml" />
+        <option value="$PROJECT_DIR$/kafka/java/pom.xml" />
+        <option value="$PROJECT_DIR$/zeebe/java/pom.xml" />
+        <option value="$PROJECT_DIR$/kafka/java/choreography-alternative/notification/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/kafka/java/camunda-optimize-ingest/pom.xml" />
+        <option value="$PROJECT_DIR$/kafka/java/order-camunda/pom.xml" />
+        <option value="$PROJECT_DIR$/kafka/java/order-zeebe/pom.xml" />
+        <option value="$PROJECT_DIR$/kafka/java/payment-camunda/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="openjdk-21" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

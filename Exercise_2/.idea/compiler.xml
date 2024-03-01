@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="flowing-retail-rest-payment-camunda" />
+        <module name="flowing-retail-kafka-choreographed-payment" />
+        <module name="flowing-retail-kafka-monitor" />
+        <module name="flowing-retail-kafka-choreographed-inventory" />
+        <module name="flowing-retail-kafka-checkout" />
+        <module name="flowing-retail-kafka-choreographed-shipping" />
+        <module name="flowing-retail-rest-stripe-fake" />
+        <module name="flowing-retail-rest-payment-zeebe" />
+        <module name="flowing-retail-kafka-choreographed-notification" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="flowing-retail-kafka-camunda-optimize-ingest" target="1.8" />
+      <module name="flowing-retail-kafka-inventory" target="1.8" />
+      <module name="flowing-retail-kafka-order-camunda" target="1.8" />
+      <module name="flowing-retail-kafka-order-zeebe" target="1.8" />
+      <module name="flowing-retail-kafka-payment" target="1.8" />
+      <module name="flowing-retail-kafka-payment-camunda" target="1.8" />
+      <module name="flowing-retail-kafka-shipping" target="1.8" />
+      <module name="flowing-retail-zeebe" target="1.5" />
+      <module name="flowing-retail-zeebe-checkout" target="1.8" />
+      <module name="flowing-retail-zeebe-inventory" target="1.8" />
+      <module name="flowing-retail-zeebe-order-fulfillment" target="1.8" />
+      <module name="flowing-retail-zeebe-payment" target="1.8" />
+      <module name="flowing-retail-zeebe-shipping" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

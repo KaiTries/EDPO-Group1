@@ -1,0 +1,5 @@
+io\flowing\retail\notification\messages\MessageListener.class
+io\flowing\retail\notification\messages\MessageListener$1.class
+io\flowing\retail\notification\NotificationApplication.class
+io\flowing\retail\notification\application\NotificationService.class
+io\flowing\retail\notification\messages\Message.class

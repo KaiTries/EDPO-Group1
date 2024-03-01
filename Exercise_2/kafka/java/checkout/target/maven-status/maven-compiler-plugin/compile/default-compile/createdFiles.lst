@@ -1,0 +1,9 @@
+io\flowing\retail\checkout\rest\conf\TomcatConfiguration$1.class
+io\flowing\retail\checkout\domain\Order.class
+io\flowing\retail\checkout\messages\MessageSender.class
+io\flowing\retail\checkout\domain\Customer.class
+io\flowing\retail\checkout\CheckoutApplication.class
+io\flowing\retail\checkout\messages\Message.class
+io\flowing\retail\checkout\rest\conf\TomcatConfiguration.class
+io\flowing\retail\checkout\rest\ShopRestController.class
+io\flowing\retail\checkout\domain\Item.class

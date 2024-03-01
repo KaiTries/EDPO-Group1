@@ -1,0 +1,8 @@
+C:\Users\Kai\Documents\GitHub\01.-Event-driven-and-Process-oriented-Architectures\EDPO-Group1\Exercise_2\kafka\java\checkout\src\main\java\io\flowing\retail\checkout\CheckoutApplication.java
+C:\Users\Kai\Documents\GitHub\01.-Event-driven-and-Process-oriented-Architectures\EDPO-Group1\Exercise_2\kafka\java\checkout\src\main\java\io\flowing\retail\checkout\rest\ShopRestController.java
+C:\Users\Kai\Documents\GitHub\01.-Event-driven-and-Process-oriented-Architectures\EDPO-Group1\Exercise_2\kafka\java\checkout\src\main\java\io\flowing\retail\checkout\messages\MessageSender.java
+C:\Users\Kai\Documents\GitHub\01.-Event-driven-and-Process-oriented-Architectures\EDPO-Group1\Exercise_2\kafka\java\checkout\src\main\java\io\flowing\retail\checkout\rest\conf\TomcatConfiguration.java
+C:\Users\Kai\Documents\GitHub\01.-Event-driven-and-Process-oriented-Architectures\EDPO-Group1\Exercise_2\kafka\java\checkout\src\main\java\io\flowing\retail\checkout\domain\Item.java
+C:\Users\Kai\Documents\GitHub\01.-Event-driven-and-Process-oriented-Architectures\EDPO-Group1\Exercise_2\kafka\java\checkout\src\main\java\io\flowing\retail\checkout\domain\Order.java
+C:\Users\Kai\Documents\GitHub\01.-Event-driven-and-Process-oriented-Architectures\EDPO-Group1\Exercise_2\kafka\java\checkout\src\main\java\io\flowing\retail\checkout\messages\Message.java
+C:\Users\Kai\Documents\GitHub\01.-Event-driven-and-Process-oriented-Architectures\EDPO-Group1\Exercise_2\kafka\java\checkout\src\main\java\io\flowing\retail\checkout\domain\Customer.java
