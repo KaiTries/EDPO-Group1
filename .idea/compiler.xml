@@ -6,11 +6,21 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="pubsub-producer" />
         <module name="pubsub-consumer" />
-        <module name="pubsub-producer (1)" />
-        <module name="pubsub-consumer (1)" />
+        <module name="flowing-retail-kafka-checkout" />
+        <module name="flowing-retail-kafka-choreographed-payment" />
+        <module name="flowing-retail-kafka-choreographed-shipping" />
+        <module name="flowing-retail-kafka-monitor" />
+        <module name="pubsub-producer" />
+        <module name="flowing-retail-kafka-choreographed-notification" />
+        <module name="flowing-retail-kafka-choreographed-inventory" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="pubsub-consumer (1)" target="11" />
+      <module name="pubsub-consumer (2)" target="11" />
+      <module name="pubsub-producer (1)" target="11" />
+      <module name="pubsub-producer (2)" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>

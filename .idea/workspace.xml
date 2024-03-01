@@ -5,12 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ad63490-f53b-4e2f-a51c-13ea9ed79d7b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Exercise_2/kafka/java/choreography-alternative/inventory/src/main/java/io/flowing/retail/inventory/domain/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise_2/kafka/java/choreography-alternative/inventory/src/main/java/io/flowing/retail/inventory/application/InventoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exercise_2/kafka/java/choreography-alternative/inventory/src/main/java/io/flowing/retail/inventory/application/InventoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise_2/kafka/java/choreography-alternative/inventory/src/main/java/io/flowing/retail/inventory/domain/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exercise_2/kafka/java/choreography-alternative/inventory/src/main/java/io/flowing/retail/inventory/domain/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise_2/kafka/java/choreography-alternative/inventory/src/main/java/io/flowing/retail/inventory/messages/MessageListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exercise_2/kafka/java/choreography-alternative/inventory/src/main/java/io/flowing/retail/inventory/messages/MessageListener.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -32,7 +45,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "fix/project-structure",
+    "git-widget-placeholder": "feature/event-carried-state-transfer",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -48,7 +61,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.CheckoutApplication">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="flowing-retail-kafka-checkout" />
       <method v="2">
@@ -62,6 +75,48 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CheckoutApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="flowing-retail-kafka-checkout" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="io.flowing.retail.checkout.CheckoutApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InventoryApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="flowing-retail-kafka-choreographed-inventory" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="io.flowing.retail.inventory.InventoryApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MonitorApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="flowing-retail-kafka-monitor" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="io.flowing.retail.monitor.MonitorApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NotificationApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="flowing-retail-kafka-choreographed-notification" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="io.flowing.retail.notification.NotificationApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PaymentApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="flowing-retail-kafka-choreographed-payment" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="io.flowing.retail.payment.PaymentApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ShippingApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="flowing-retail-kafka-choreographed-shipping" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="io.flowing.retail.shipping.ShippingApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -71,7 +126,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1709308455072</updated>
-      <workItem from="1709308457998" duration="767000" />
+      <workItem from="1709308457998" duration="5260000" />
     </task>
     <servers />
   </component>
