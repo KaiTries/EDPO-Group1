@@ -2,6 +2,7 @@ package io.flowing.retail.notification.messages;
 
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import io.flowing.retail.notification.application.NotificationService;
+import io.flowing.retail.notification.messages.payload.CustomerPayload;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
@@ -25,36 +26,21 @@ public class MessageListener {
   @Transactional
   @KafkaListener(id = "notification", topics = TOPIC_NAME)
   public void goodsFetchedEventReceived(String messageJson, @Header("type") String messageType) throws Exception {
-    Message<JsonNode> message = objectMapper.readValue(messageJson, new TypeReference<Message<JsonNode>>() {
+    Message<JsonNode> message = objectMapper.readValue(messageJson, new TypeReference<>() {
     });
     ObjectNode payload = (ObjectNode) message.getData();
-    String customer = payload.get("customer").get("name").asText();
-
+    CustomerPayload customer = objectMapper.treeToValue(payload.get("customer"), CustomerPayload.class);
+    String subject = null;
     switch (messageType) {
-      case "OrderPlacedEvent":
-        notificationService.sendingEmail(customer, "Order placed");
-        break;
-      case "PaymentReceivedEvent":
-        notificationService.sendingEmail(customer, "Payment received");
-        break;
-      case "GoodsFetchedEvent":
-        notificationService.sendingEmail(customer, "Goods fetched");
-        break;
-      case "GoodsNotFetchedEvent":
-        notificationService.sendingEmail(customer, "Goods not fetched. Not enough goods");
-        break;
-      case "GoodsShippedEvent":
-        notificationService.sendingEmail(customer, "Goods shipped");
-        break;
-      case "OrderCompletedEvent":
-        notificationService.sendingEmail(customer, "Order completed");
-        break;
-      default:
-        System.out.println("Unknown message type");
-        break;
+      case "OrderPlacedEvent"-> subject = "Order placed";
+      case "PaymentReceivedEvent" -> subject = "Payment received";
+      case "GoodsFetchedEvent" -> subject = "Goods fetched";
+      case "GoodsShippedEvent"-> subject =  "Goods shipped";
+      case "OrderCompletedEvent" -> subject =  "Order completed";
+      case "GoodsNotFetchedEvent" -> subject ="Not enough Goods";
+      default -> System.out.println("Unknown message type");
     }
-
-
+    notificationService.sendingEmail(customer,subject);
   }
 
   @Autowired

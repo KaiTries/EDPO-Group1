@@ -2,8 +2,6 @@ package io.flowing.retail.checkout.rest;
 
 import static org.springframework.web.bind.annotation.RequestMethod.PUT;
 
-import java.util.UUID;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -27,9 +25,9 @@ public class ShopRestController {
     order.addItem("article1", 5);
     order.addItem("article2", 10);
     
-    order.setCustomer(new Customer("Camunda", "Zossener Strasse 55\n10961 Berlin\nGermany"));
+    order.setCustomer(new Customer("Camunda", "Zossener Strasse 55\n10961 Berlin\nGermany","camunda@gmail.com"));
     
-    Message<Order> message = new Message<Order>("OrderPlacedEvent", order);
+    Message<Order> message = new Message<>("OrderPlacedEvent", order);
     messageSender.send(message);
         
     // note that we cannot easily return an order id here - as everything is asynchronous
