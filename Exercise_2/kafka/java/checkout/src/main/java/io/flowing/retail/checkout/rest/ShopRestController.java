@@ -2,6 +2,9 @@ package io.flowing.retail.checkout.rest;
 
 import static org.springframework.web.bind.annotation.RequestMethod.PUT;
 
+import java.util.UUID;
+
+import io.flowing.retail.checkout.domain.NotEnoughGoodsException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,18 +25,21 @@ public class ShopRestController {
   public String placeOrder(@RequestParam(value = "customerId") String customerId) {
     
     Order order = new Order();
-    order.addItem("article1", 5);
-    order.addItem("article2", 10);
-    
     order.setCustomer(new Customer("Camunda", "Zossener Strasse 55\n10961 Berlin\nGermany","camunda@gmail.com"));
-    
-    Message<Order> message = new Message<>("OrderPlacedEvent", order);
-    messageSender.send(message);
-        
-    // note that we cannot easily return an order id here - as everything is asynchronous
-    // and blocking the client is not what we want.
-    // but we return an own correlationId which can be used in the UI to show status maybe later
-    return "{\"traceId\": \"" + message.getTraceid() + "\"}";
-  }
+    try {
+      order.addItem("article1", 5);
+      order.addItem("article2", 10);
 
+      Message<Order> message = new Message<>("OrderPlacedEvent", order);
+      messageSender.send(message);
+
+      // note that we cannot easily return an order id here - as everything is asynchronous
+      // and blocking the client is not what we want.
+      // but we return an own correlationId which can be used in the UI to show status maybe later
+      return "{\"traceId\": \"" + message.getTraceid() + "\"}";
+
+    } catch (NotEnoughGoodsException e){
+      return "{ \"tradeId\": \"# Not enough goods to fulfill order.\" }";
+    }
+  }
 }

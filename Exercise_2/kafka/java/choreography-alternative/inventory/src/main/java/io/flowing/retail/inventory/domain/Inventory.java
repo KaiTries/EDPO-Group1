@@ -33,8 +33,11 @@ public final class Inventory {
         return INSTANCE;
     }
 
+    public Set<Item> getInventory(){
+        return inventory;
+    }
 
-    public boolean enoughGoods(PickOrder pickOrder) throws NotEnoughGoodsException {
+    public void enoughGoods(PickOrder pickOrder) throws NotEnoughGoodsException {
         for (Item item : pickOrder.getItems()) {
             for (Item inventoryItem : inventory) {
                 if (inventoryItem.getArticleId().equals(item.getArticleId())) {
@@ -44,7 +47,6 @@ public final class Inventory {
                 }
             }
         }
-        return true;
     }
 
     public void decreaseInventory(PickOrder pickOrder) throws NotEnoughGoodsException {
@@ -56,9 +58,7 @@ public final class Inventory {
                 }
             });
         });
-
     }
-
 
     @Override
     public String toString() {

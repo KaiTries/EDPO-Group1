@@ -3,7 +3,7 @@ package io.flowing.retail.inventory.messages;
 import java.io.IOException;
 import java.util.Arrays;
 
-import io.flowing.retail.inventory.domain.NotEnoughGoodsException;
+import io.flowing.retail.inventory.domain.Inventory;
 import io.flowing.retail.inventory.domain.PickOrderNotFulfilledException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -11,9 +11,7 @@ import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -35,7 +33,7 @@ public class MessageListener {
 
     @Transactional
     @KafkaListener(id = "inventory", topics = MessageSender.TOPIC_NAME)
-    public void paymentReceived(String messageJson, @Header("type") String messageType) throws JsonParseException, JsonMappingException, IOException {
+    public void paymentReceived(String messageJson, @Header("type") String messageType) throws IOException {
         if ("PaymentReceivedEvent".equals(messageType)) {
             Message<JsonNode> message = objectMapper.readValue(messageJson, new TypeReference<Message<JsonNode>>() {
             });
@@ -57,6 +55,7 @@ public class MessageListener {
                                 "GoodsFetchedEvent", //
                                 message.getTraceid(), //
                                 payload));
+
             } catch (PickOrderNotFulfilledException e) {
                 // If we don't have enough goods we send a GoodsNotFetchedEvent
                 messageSender.send( //
@@ -64,9 +63,13 @@ public class MessageListener {
                                 "GoodsNotFetchedEvent", //
                                 message.getTraceid(), //
                                 payload));
+            } finally {
+                messageSender.send(
+                        new Message<JsonNode>(
+                                "InventoryStatusEvent",
+                                message.getTraceid(),
+                                objectMapper.valueToTree(Inventory.getInstance().getInventory())));
             }
         }
     }
-
-
 }
