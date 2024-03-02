@@ -37,7 +37,7 @@ public class MessageListener {
       String shipmentId = shippingService.createShipment( //
               payloadEvent.getPickId(), //
               payloadEvent.getCustomer().getName(), //
-              payloadEvent.getCustomer().getAddress(), //
+              payloadEvent.getCustomer().getAddress(),//
               "DHL");
 
       payload.put("shipmentId", shipmentId);

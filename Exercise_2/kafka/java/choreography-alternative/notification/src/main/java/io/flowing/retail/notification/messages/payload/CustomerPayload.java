@@ -1,21 +1,11 @@
-package io.flowing.retail.checkout.domain;
+package io.flowing.retail.notification.messages.payload;
 
-public class Customer {
-  
+public class CustomerPayload {
+
   private String name;
-  private String email;
   private String address;
-  
-  public Customer() {    
-  }
-  
-  public Customer(String name, String address, String email) {
-    super();
-    this.name = name;
-    this.address = address;
-    this.email = email;
-  }
-  
+  private String email;
+
   public String getName() {
     return name;
   }
@@ -30,7 +20,5 @@ public class Customer {
   }
 
   public String getEmail() {return email;}
-
   public void setEmail(String email) {this.email = email;}
-
 }
