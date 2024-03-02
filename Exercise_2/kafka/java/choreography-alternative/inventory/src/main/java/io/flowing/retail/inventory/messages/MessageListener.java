@@ -3,6 +3,8 @@ package io.flowing.retail.inventory.messages;
 import java.io.IOException;
 import java.util.Arrays;
 
+import io.flowing.retail.inventory.domain.NotEnoughGoodsException;
+import io.flowing.retail.inventory.domain.PickOrderNotFulfilledException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.messaging.handler.annotation.Header;
@@ -21,41 +23,50 @@ import io.flowing.retail.inventory.domain.Item;
 
 @Component
 public class MessageListener {
-  
-  @Autowired
-  private MessageSender messageSender;
-  
-  @Autowired
-  private InventoryService inventoryService;
-  
-  @Autowired
-  private ObjectMapper objectMapper;
 
-  @Transactional
-  @KafkaListener(id = "inventory", topics = MessageSender.TOPIC_NAME)
-  public void paymentReceived(String messageJson, @Header("type") String messageType) throws JsonParseException, JsonMappingException, IOException {
-    if ("PaymentReceivedEvent".equals(messageType)) {
-      Message<JsonNode> message = objectMapper.readValue(messageJson, new TypeReference<Message<JsonNode>>(){});
+    @Autowired
+    private MessageSender messageSender;
 
-      ObjectNode payload = (ObjectNode) message.getData();
+    @Autowired
+    private InventoryService inventoryService;
 
-      Item[] items = objectMapper.treeToValue(payload.get("items"), Item[].class);
+    @Autowired
+    private ObjectMapper objectMapper;
 
-      String pickId = inventoryService.pickItems( //
-              Arrays.asList(items), "order", payload.get("orderId").asText());
+    @Transactional
+    @KafkaListener(id = "inventory", topics = MessageSender.TOPIC_NAME)
+    public void paymentReceived(String messageJson, @Header("type") String messageType) throws JsonParseException, JsonMappingException, IOException {
+        if ("PaymentReceivedEvent".equals(messageType)) {
+            Message<JsonNode> message = objectMapper.readValue(messageJson, new TypeReference<Message<JsonNode>>() {
+            });
 
-      // as in payment - we have to keep the whole order in the payload
-      // as the data flows through this service
+            ObjectNode payload = (ObjectNode) message.getData();
 
-      payload.put("pickId", pickId);
+            Item[] items = objectMapper.treeToValue(payload.get("items"), Item[].class);
 
-      messageSender.send( //
-              new Message<JsonNode>( //
-                      "GoodsFetchedEvent", //
-                      message.getTraceid(), //
-                      payload));
+            try {
+                String pickId = inventoryService.pickItems(Arrays.asList(items), "order", payload.get("orderId").asText());
+
+                // as in payment - we have to keep the whole order in the payload
+                // as the data flows through this service
+
+                payload.put("pickId", pickId);
+
+                messageSender.send( //
+                        new Message<JsonNode>( //
+                                "GoodsFetchedEvent", //
+                                message.getTraceid(), //
+                                payload));
+            } catch (PickOrderNotFulfilledException e) {
+                // If we don't have enough goods we send a GoodsNotFetchedEvent
+                messageSender.send( //
+                        new Message<JsonNode>( //
+                                "GoodsNotFetchedEvent", //
+                                message.getTraceid(), //
+                                payload));
+            }
+        }
     }
-  }
 
-    
+
 }

@@ -40,6 +40,9 @@ public class MessageListener {
       case "GoodsFetchedEvent":
         notificationService.sendingEmail(customer, "Goods fetched");
         break;
+      case "GoodsNotFetchedEvent":
+        notificationService.sendingEmail(customer, "Goods not fetched. Not enough goods");
+        break;
       case "GoodsShippedEvent":
         notificationService.sendingEmail(customer, "Goods shipped");
         break;
