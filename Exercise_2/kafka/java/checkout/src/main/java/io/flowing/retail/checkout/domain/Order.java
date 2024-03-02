@@ -10,17 +10,20 @@ public class Order {
   private Customer customer;
   private List<Item> items = new ArrayList<>();
   
-  public void addItem(String articleId, int amount) {
+  public void addItem(String articleId, int amount) throws NotEnoughGoodsException {
     // keep only one item, but increase amount accordingly
     Item existingItem = removeItem(articleId);
     if (existingItem!=null) {
       amount += existingItem.getAmount();
     }
-    
-    Item item = new Item();
-    item.setAmount(amount);
-    item.setArticleId(articleId);
-    items.add(item);    
+
+    try {
+      Item item = Inventory.getInstance().takeItem(articleId, amount);
+      items.add(item);
+    } catch (NotEnoughGoodsException e) {
+      System.out.println("# Not enough goods to fulfill order of " + articleId);
+      throw e;
+    }
   }
 
   public Item removeItem(String articleId) {
