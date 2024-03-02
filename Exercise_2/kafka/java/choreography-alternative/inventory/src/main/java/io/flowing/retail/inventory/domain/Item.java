@@ -5,6 +5,14 @@ public class Item {
   private String articleId;
   private int amount;
 
+  public Item(){
+  }
+
+  public Item(String articleId, int amount){
+    this.articleId = articleId;
+    this.amount = amount;
+  }
+
   public Item setArticleId(String articleId) {
     this.articleId = articleId; 
     return this;

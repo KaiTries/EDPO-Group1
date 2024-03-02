@@ -1,4 +1,4 @@
-FROM openjdk:17-alpine
+FROM openjdk:latest
 VOLUME /tmp
 ADD target/*.jar app.jar
 ENV JAVA_OPTS=""

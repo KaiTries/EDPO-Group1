@@ -4,14 +4,17 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/Exercise_1/Experiment_5/consumer/pom.xml" />
-        <option value="$PROJECT_DIR$/Exercise_1/Experiment_5/producer/pom.xml" />
-        <option value="$PROJECT_DIR$/Exercise_1/Experiment_8/producer/pom.xml" />
-        <option value="$PROJECT_DIR$/Exercise_1/Experiment_8/consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/Exercise_2/kafka/java/checkout/pom.xml" />
+        <option value="$PROJECT_DIR$/Exercise_2/kafka/java/choreography-alternative/inventory/pom.xml" />
+        <option value="$PROJECT_DIR$/Exercise_2/kafka/java/choreography-alternative/notification/pom.xml" />
+        <option value="$PROJECT_DIR$/Exercise_2/kafka/java/choreography-alternative/payment/pom.xml" />
+        <option value="$PROJECT_DIR$/Exercise_2/kafka/java/choreography-alternative/shipping/pom.xml" />
+        <option value="$PROJECT_DIR$/Exercise_2/kafka/java/choreography-alternative/pom.xml" />
+        <option value="$PROJECT_DIR$/Exercise_2/kafka/java/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="21" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_20" default="true" project-jdk-name="openjdk-20" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

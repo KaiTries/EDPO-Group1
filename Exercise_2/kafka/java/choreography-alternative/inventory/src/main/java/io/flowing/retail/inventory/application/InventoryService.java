@@ -3,6 +3,7 @@ package io.flowing.retail.inventory.application;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import io.flowing.retail.inventory.domain.Inventory;
 import org.springframework.stereotype.Component;
 
 import io.flowing.retail.inventory.domain.Item;
@@ -38,9 +39,17 @@ public class InventoryService {
    * @return a unique pick ID 
    */
   public String pickItems(List<Item> items, String reason, String refId) {
-    PickOrder pickOrder = new PickOrder().setItems(items);    
-    System.out.println("# Items picked: " + pickOrder);      
-    return pickOrder.getPickId();
+    PickOrder pickOrder = new PickOrder().setItems(items);
+
+    String message;
+    if (Inventory.getInstance().enoughGoods(pickOrder)){
+      Inventory.getInstance().decreaseInventory(pickOrder);
+      System.out.println("# Items picked: " + pickOrder);
+      message = pickOrder.getPickId();
+    } else {
+      message = "Not enough goods.";
+    }
+    return message;
   }
 
   /**

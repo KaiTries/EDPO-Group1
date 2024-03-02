@@ -38,6 +38,7 @@ public class MessageListener {
       Message<JsonNode> message = objectMapper.readValue(messageJson, new TypeReference<Message<JsonNode>>(){});
 
       ObjectNode payload = (ObjectNode) message.getData();
+
       Item[] items = objectMapper.treeToValue(payload.get("items"), Item[].class);
 
       String pickId = inventoryService.pickItems( //
