@@ -1,7 +1,7 @@
 # Experiment 4: Risk of data loss due to consumer lag
 
 ## Goal
-* Investigate the risk of data loss in case of high consumer lag.
+Investigate the risk of data loss in case of high consumer lag.
 
 ## Experiment Explanation
 Consumer lag is the delay between producer and consumer. Specifically it is the difference
@@ -14,11 +14,10 @@ will commit the offset of each event individually. Since the consumer processing
 the event creation rate, there should occur long queues of events in the long run.
 
 To force data loss we introduced the following properties to the topic:
-
-    ```
-    conf.put(TopicConfig.RETENTION_MS_CONFIG, "2000");
-    conf.put(TopicConfig.CLEANUP_POLICY_CONFIG, TopicConfig.CLEANUP_POLICY_DELETE);
-    ```
+ ```
+conf.put(TopicConfig.RETENTION_MS_CONFIG, "2000");
+conf.put(TopicConfig.CLEANUP_POLICY_CONFIG, TopicConfig.CLEANUP_POLICY_DELETE);
+ ```
 
 Further down below you will need to specify some more properties to the kafka server.
 
@@ -30,7 +29,7 @@ Further down below you will need to specify some more properties to the kafka se
 1. Shut down all processes including Kafka
 2. Delete the Docker container in Docker Desktop
 3. Start the Kafka cluster
-    ```bash
+    ```
     cd docker
     docker-compose up -d
     ```
