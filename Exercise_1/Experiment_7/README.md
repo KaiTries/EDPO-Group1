@@ -1,7 +1,7 @@
 # Experiment 7: Consumers and Consumer Groups
 
 ## Goal
-* Investigate the behavior of Kafka with multiple Consumers and Consumer Groups.
+Investigate the behavior of Kafka with multiple Consumers and Consumer Groups.
 
 ## Experiment Explanation
 In this simple experiment we will explore how Kafka behaves when there are multiple Consumers divided into multiple Consumer Groups.
@@ -20,7 +20,7 @@ The following elements are in place:
 
 ## Steps
 1. Start the Kafka cluster
-    ```bash
+    ```
     cd docker
     docker-compose up -d
     ```

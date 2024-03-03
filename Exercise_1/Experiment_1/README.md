@@ -1,7 +1,7 @@
 # Experiment 1: Impact of Load and Batch size on Latency
 
 ## Goal
-* Investigate the impact of changing the load and batch size on the processing latency.
+Investigate the impact of changing the load and batch size on the processing latency.
 
 ## Experiment Explanation
 Kafka is designed to handle high-throughput, low-latency data processing.
@@ -12,8 +12,12 @@ To fine-tune the trade-off, Kafka provides two properties for the producer:
 * linger.ms=xyz (the time Kafka is willing to wait before sending a batch, even if the batch is not full)
 * batch.size=xyz (the maximum size of a batch)
 
+
 :heavy_plus_sign: larger batch sizes improve throughput as more messages are sent in a single request.
+
+
 :heavy_minus_sign: larger batch sizes increase latency as messages wait in the producer's buffer until a batch is filled.
+
 
 ## Setup
 * docker/docker-compose.yml Change the property: KAFKA_ADVERTISED_HOST_NAME to your local ipv4 address (ifconfig | grep
@@ -21,7 +25,7 @@ To fine-tune the trade-off, Kafka provides two properties for the producer:
 
 ## Steps
 1. Start the Kafka cluster
-    ```bash
+    ```
     cd docker
     docker-compose up -d
     ```
