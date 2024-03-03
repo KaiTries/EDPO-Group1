@@ -21,6 +21,15 @@ from the directory [runner/docker-compose](runner/docker-compose).
 
 ## Implementation of Exercise 2 - Part 2
 ### Email Notification
+In this part of the exercise,
+we have added a new Service [NotificationService](./kafka/java/choreography-alternative/notification).
+The Service listens to all events relevant to the order process and sends an appropriate email to the customer.
+It maps the messages of the events to appropriate java objects, so that it can use the information to email the customer.
+Currently, the sending of an email is just emulated by a log message,
+since implementing a real email sender is out of the scope of the exercise and does not help with understanding kafka.
+See following classes for implementation details:
+
+
 ### Event State Transfer
 ### Error Scenario
 In this part of the exercise, we have extended the [Inventory](./kafka/java/choreography-alternative/inventory/src/main/java/io/flowing/retail/inventory/domain/Inventory.java) such that it can handle orders that require a greater amount
