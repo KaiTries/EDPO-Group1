@@ -1,4 +1,4 @@
-# Experiment 2:  the risk of data loss due to offset misconfigurations
+# Experiment 5: the risk of data loss due to offset misconfiguration
 Based on repository [lab02-kafka-producer-consumer](https://github.com/scs-edpo/lab02Part1-kafka-producer-consumer)
 
 Made Producer a bit simpler -> Sends message every second
