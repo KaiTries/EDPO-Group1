@@ -7,15 +7,15 @@ This sample application demonstrates a simple order fulfillment system, decompos
 To run the **Choreography-based** version of the Flowing Retail project for lab04 you first need to be sure that all
 the relevant projects have been built at least once:
 
-```bash
-  $ cd .\kafka\java\
-  $ mvn clean install
+```
+  cd .\kafka\java\
+  mvn clean install
 ```
 
 Then you can execute:
 
-```
-  $ docker-compose -f docker-compose-kafka-java-choreography.yml up --build
+```bash
+  docker-compose -f docker-compose-kafka-java-choreography.yml up --build
 ```
 from the directory [runner/docker-compose](runner/docker-compose).
 
@@ -27,7 +27,14 @@ The Service listens to all events relevant to the order process and sends an app
 It maps the messages of the events to appropriate java objects, so that it can use the information to email the customer.
 Currently, the sending of an email is just emulated by a log message,
 since implementing a real email sender is out of the scope of the exercise and does not help with understanding kafka.
-See following classes for implementation details:
+#### Demo
+To observe the functionality, simply start the services as described above.
+Then place an order by using the endpoint
+provided by the [CheckoutService](./kafka/java/checkout/src/main/java/io/flowing/retail/checkout/rest/ShopRestController.java).
+It can be accessed by [this link](http://localhost:8091) and clicking the button.
+Checking the logs of the notification service, you should see a log message indicating that an email has been sent.
+
+
 
 
 ### Event-carried State Transfer
