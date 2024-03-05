@@ -53,9 +53,13 @@ By doing that we can derive the following implications
 * Better fault tolerance because the Inventory service now doesn't have to be running at all time
   * Inventory checking in Checkout service
   * Inventory checking in Inventory service
-
-
-
+#### Demo
+To observe this scenario, start the services as described above.
+The inventory starts with enough items to fulfill the first two orders. 
+After that, you can see in the logs of the checkout service,
+that it will log a message indicating that the inventory is empty.
+Further, the webpage will also show a message indicating that the inventory is empty.
+No events will be emitted, since the order will not go through.
 ### Error Scenario
 In this part of the exercise, we have extended the [Inventory](./kafka/java/choreography-alternative/inventory/src/main/java/io/flowing/retail/inventory/domain/Inventory.java) such that it can handle orders that require a greater amount
 of one or more items than the [Inventory](./kafka/java/choreography-alternative/inventory/src/main/java/io/flowing/retail/inventory/domain/Inventory.java) has. In this case, the Inventory will raise an [NotEnoughGoodsException](./kafka/java/choreography-alternative/inventory/src/main/java/io/flowing/retail/inventory/domain/NotEnoughGoodsException.java) that will be catched
@@ -67,3 +71,34 @@ which indicates that the goods have not been picked up. See following classes fo
 - [NotEnoughGoodsException](./kafka/java/choreography-alternative/inventory/src/main/java/io/flowing/retail/inventory/domain/NotEnoughGoodsException.java)
 - [PickOrderNotFullfilledException](./kafka/java/choreography-alternative/inventory/src/main/java/io/flowing/retail/inventory/domain/PickOrderNotFulfilledException.java)
 - [MessageListener](./kafka/java/choreography-alternative/inventory/src/main/java/io/flowing/retail/inventory/messages/MessageListener.java)
+#### Demo
+To test this, some adjustments to the code have to be made, since
+our implementation of the Event-carried State Transfer avoids this error scenario
+(It could still happen due to eventual consistency, but is not suitable for demo purposes).
++ In [checkoutService/Inventory](./kafka/java/checkout/src/main/java/io/flowing/retail/checkout/domain/Inventory.java)
+change the takeItem method, such that it does not check for the amount of items in the inventory.
+  ```java
+    public Item takeItem(String articleId, int amount) throws NotEnoughGoodsException {
+        /*
+        for (Item inventoryItem : inventory){
+            if (inventoryItem.getArticleId().equals(articleId) && inventoryItem.getAmount() >= amount) {
+                inventoryItem.setAmount(inventoryItem.getAmount() - amount);
+                Item newItem = new Item();
+                newItem.setArticleId(articleId);
+                newItem.setAmount(amount);
+                return newItem;
+            }
+        }
+        */
+        Item newItem = new Item();
+        newItem.setArticleId(articleId);
+        newItem.setAmount(amount);
+        return newItem;
+        // throw new NotEnoughGoodsException();
+    }
+  ```
+This is enough to test the error scenario.
+Now, after placing two orders, the inventory will be empty.
+After that, every order will cause the Inventory to send a "GoodsNotFetchedEvent."
+The appropriate services are
+listening to this event and logging their theoretical actions.

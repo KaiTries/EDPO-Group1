@@ -39,7 +39,7 @@ public class ShopRestController {
       return "{\"traceId\": \"" + message.getTraceid() + "\"}";
 
     } catch (NotEnoughGoodsException e){
-      return "{ \"tradeId\": \"# Not enough goods to fulfill order.\" }";
+      return "{ \"traceId\": \"# Not enough goods to fulfill order.\" }";
     }
   }
 }
