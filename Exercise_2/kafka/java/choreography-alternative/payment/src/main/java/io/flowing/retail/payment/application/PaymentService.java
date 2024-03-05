@@ -13,4 +13,10 @@ public class PaymentService {
     return UUID.randomUUID().toString();
   }
 
+  public String refundPayment(String orderId, long amount) {
+    System.out.println("Refunded Payment for " + orderId + " with amount "+amount);
+    return UUID.randomUUID().toString();
+  }
+
+
 }

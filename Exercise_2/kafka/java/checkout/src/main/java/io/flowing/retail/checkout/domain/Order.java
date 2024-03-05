@@ -9,19 +9,23 @@ public class Order {
   private String orderId = "checkout-generated-" + UUID.randomUUID().toString();
   private Customer customer;
   private List<Item> items = new ArrayList<>();
-  
-  public void addItem(String articleId, int amount) throws NotEnoughGoodsException {
-    // keep only one item, but increase amount accordingly
-    Item existingItem = removeItem(articleId);
-    if (existingItem!=null) {
-      amount += existingItem.getAmount();
-    }
 
+  private int totalSum = 0;
+
+  public void addItem(String articleId, int amount) throws NotEnoughGoodsException {
+    Inventory inventory = Inventory.getInstance();
     try {
-      Item item = Inventory.getInstance().takeItem(articleId, amount);
+      Item item = inventory.takeItem(articleId, amount);
+      Item existingItem = removeItem(articleId);
+      if (existingItem!=null) {
+        item.setAmount(amount + existingItem.getAmount());
+      }
       items.add(item);
+      totalSum += amount;
     } catch (NotEnoughGoodsException e) {
       System.out.println("# Not enough goods to fulfill order of " + articleId);
+      // put items back to inventory
+      items.forEach(i -> inventory.getInventory().add(i));
       throw e;
     }
   }
@@ -48,9 +52,11 @@ public class Order {
   public void setItems(List<Item> items) {
     this.items = items;
   }
+  public int getTotalSum() {return totalSum;}
+  public void setTotalSum(int totalSum) {this.totalSum = totalSum;}
   @Override
   public String toString() {
-    return "Order [orderId=" + orderId + ", items=" + items + "]";
+    return "Order [orderId=" + orderId + ", items=" + items +  ", totalSum=" + totalSum + "]";
   }
 
   public Customer getCustomer() {

@@ -29,6 +29,7 @@ public class ShopRestController {
     try {
       order.addItem("article1", 5);
       order.addItem("article2", 10);
+      order.addItem("article1", 3);
 
       Message<Order> message = new Message<>("OrderPlacedEvent", order);
       messageSender.send(message);
@@ -39,7 +40,7 @@ public class ShopRestController {
       return "{\"traceId\": \"" + message.getTraceid() + "\"}";
 
     } catch (NotEnoughGoodsException e){
-      return "{ \"traceId\": \"# Not enough goods to fulfill order.\" }";
+      return "{\"traceId\": \"# Not enough goods to fulfill order.\" }";
     }
   }
 }
