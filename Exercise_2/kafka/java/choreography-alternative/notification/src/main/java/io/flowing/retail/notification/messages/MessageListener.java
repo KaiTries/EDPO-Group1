@@ -38,6 +38,7 @@ public class MessageListener {
       case "GoodsShippedEvent"-> subject =  "Goods shipped";
       case "OrderCompletedEvent" -> subject =  "Order completed";
       case "GoodsNotFetchedEvent" -> subject ="Not enough Goods";
+      case "PaymentRefundedEvent" -> subject = "Payment refunded";
       default -> System.out.println("Unknown message type");
     }
     notificationService.sendingEmail(customer,subject);
