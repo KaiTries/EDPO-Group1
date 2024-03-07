@@ -1,3 +1,4 @@
 [submodule "EDPO-Group1-Project"]
 	path = EDPO-Group1-Project
 	url = https://github.com/jonaslanzlinger/EDPO-Group1-Project.git
+	branch = master
