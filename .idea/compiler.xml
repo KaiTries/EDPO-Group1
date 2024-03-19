@@ -17,10 +17,10 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="pubsub-consumer (1)" target="11" />
-      <module name="pubsub-consumer (2)" target="11" />
-      <module name="pubsub-producer (1)" target="11" />
-      <module name="pubsub-producer (2)" target="11" />
+      <module name="pubsub-consumer (1)" target="1.5" />
+      <module name="pubsub-consumer (2)" target="1.5" />
+      <module name="pubsub-producer (1)" target="1.5" />
+      <module name="pubsub-producer (2)" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
