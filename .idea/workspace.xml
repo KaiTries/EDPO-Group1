@@ -5,52 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ad63490-f53b-4e2f-a51c-13ea9ed79d7b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Exercise_2/kafka/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/kafka/java/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/payment-camunda/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/payment-camunda/node-customer-credit-worker/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/payment-camunda/node-customer-credit-worker/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/payment-camunda/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/payment-camunda/src/main/java/io/flowing/retail/payment/PaymentRestApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/payment-camunda/src/main/java/io/flowing/retail/payment/conf/CamundaIdGeneratorConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/payment-camunda/src/main/java/io/flowing/retail/payment/conf/CamundaJobExecutorConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/payment-camunda/src/main/java/io/flowing/retail/payment/conf/ProcessEngineConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/payment-camunda/src/main/java/io/flowing/retail/payment/conf/RestConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/payment-camunda/src/main/java/io/flowing/retail/payment/resthacks/PaymentRestHacksControllerV1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/payment-camunda/src/main/java/io/flowing/retail/payment/resthacks/PaymentRestHacksControllerV2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/payment-camunda/src/main/java/io/flowing/retail/payment/resthacks/PaymentRestHacksControllerV3.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/payment-camunda/src/main/java/io/flowing/retail/payment/resthacks/PaymentRestHacksControllerV3b.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/payment-camunda/src/main/java/io/flowing/retail/payment/resthacks/PaymentRestHacksControllerV4.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/payment-camunda/src/main/java/io/flowing/retail/payment/resthacks/PaymentRestHacksControllerV4b.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/payment-camunda/src/main/java/io/flowing/retail/payment/resthacks/PaymentRestHacksControllerV5.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/payment-camunda/src/main/java/io/flowing/retail/payment/resthacks/PaymentRestHacksControllerV6.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/payment-camunda/src/main/java/io/flowing/retail/payment/resthacks/PaymentRestHacksControllerV7.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/payment-camunda/src/main/java/io/flowing/retail/payment/resthacks/adapter/ChargeCreditCardAdapter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/payment-camunda/src/main/java/io/flowing/retail/payment/resthacks/adapter/ChargeCreditCardDegradingAdapter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/payment-camunda/src/main/java/io/flowing/retail/payment/resthacks/adapter/FailingOnLastRetry.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/payment-camunda/src/main/java/io/flowing/retail/payment/resthacks/adapter/FailingOnLastRetryAspect.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/payment-camunda/src/main/java/io/flowing/retail/payment/resthacks/adapter/NotifySemaphorAdapter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/payment-camunda/src/main/java/io/flowing/retail/payment/resthacks/worker/CustomerCreditWorker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/payment-camunda/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/payment-camunda/src/main/resources/logback-test.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/payment-camunda/src/main/resources/payment5.bpmn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/payment-camunda/src/main/resources/payment6.bpmn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/payment-camunda/src/main/resources/payment7.bpmn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/payment-zeebe/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/payment-zeebe/src/main/java/io/flowing/retail/payment/PaymentRestApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/payment-zeebe/src/main/java/io/flowing/retail/payment/rest/PaymentRestHacksControllerV1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/payment-zeebe/src/main/java/io/flowing/retail/payment/rest/PaymentRestHacksControllerV2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/payment-zeebe/src/main/java/io/flowing/retail/payment/rest/PaymentRestHacksControllerV3.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/payment-zeebe/src/main/java/io/flowing/retail/payment/rest/PaymentRestHacksControllerV4.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/payment-zeebe/src/main/java/io/flowing/retail/payment/rest/PaymentRestHacksControllerV4b.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/payment-zeebe/src/main/java/io/flowing/retail/payment/rest/RestConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/payment-zeebe/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/payment-zeebe/src/main/resources/logback-test.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/stripe-fake/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/stripe-fake/src/main/java/io/flowing/retail/stripe/fake/StripeFakeApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/stripe-fake/src/main/java/io/flowing/retail/stripe/fake/StripeFakeRestController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2/rest/java/stripe-fake/src/main/resources/application.properties" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exercise_3_&amp;_4/BPMN-Order-Process.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exercise_3_&amp;_4/BPMN-Warehouse-Process.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +56,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "hand-in",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -110,6 +68,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Exercise_3_&amp;_4" />
       <recent name="$PROJECT_DIR$/Exercise_2" />
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -180,6 +139,8 @@
       <option name="presentableId" value="Default" />
       <updated>1709308455072</updated>
       <workItem from="1709308457998" duration="5260000" />
+      <workItem from="1710259610131" duration="200000" />
+      <workItem from="1710879396109" duration="822000" />
     </task>
     <servers />
   </component>
