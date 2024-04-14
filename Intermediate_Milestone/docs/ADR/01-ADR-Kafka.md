@@ -33,3 +33,7 @@ The individual Kafka topics for each station make it easier to scale the system 
 if any station needs to be added or the workflow needs to be extended or changed. Also debugging and
 monitoring of the system is easier, as we can easily see which messages are sent to which station
 by the topic names.
+
+Also using Kafka as the message broker is a good choice, as Kafka is known for its high throughput which
+is potentially needed in our scenario as we are moving more and more towards the topics of stream 
+processing in the course. (Keep in mind, Messaging and Stream processing are core specialties of Kafka)
