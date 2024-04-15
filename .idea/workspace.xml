@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ad63490-f53b-4e2f-a51c-13ea9ed79d7b" name="Changes" comment="added project module">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate_Milestone/docs/ADR/02-ADR-Camunda.md" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate_Milestone/docs/ADR/02-ADR-Camunda.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Intermediate_Milestone/docs/ADR/03-ADR-MQTT.md" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate_Milestone/docs/ADR/03-ADR-MQTT.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +139,7 @@
       <workItem from="1710259610131" duration="200000" />
       <workItem from="1710879396109" duration="822000" />
       <workItem from="1710882652197" duration="349000" />
-      <workItem from="1713194353893" duration="310000" />
+      <workItem from="1713194353893" duration="1210000" />
     </task>
     <servers />
   </component>
